@@ -1,0 +1,27 @@
+<!--
+  Generated template for the QuantitymodalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <h4 style="text-align:center">
+      Quantity
+    </h4>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form (ngSubmit)="dismiss()">
+    <ion-item>
+      <ion-label floating>Type quantity</ion-label>
+      <ion-input [(ngModel)]="qunt" name="qunt" type="number" clearOnEdit="true">
+      </ion-input>
+    </ion-item>
+  <button ion-button full clear type="submit" >Done</button>
+  </form>
+</ion-content>

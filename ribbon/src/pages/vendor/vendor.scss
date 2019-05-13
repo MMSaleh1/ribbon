@@ -1,0 +1,127 @@
+page-vendor {
+  .button-right{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 1vh;
+    right: 0vw;
+    z-index: 999;
+    ion-icon{
+      font-size: 1.6em;
+    }
+
+  }
+
+  .scroll-container{
+    margin-top: 2vh;
+    height: calc(100% - 9vh);
+  }
+  .scroll-list{
+    height: 80vh;
+  }
+    .cart-list-item{
+        width: 100%;
+        border-bottom: thin solid #3b3b3b;
+        .item-thumbnail{
+          border-radius: 13px;
+          .img{
+          border-radius: 13px;
+          }
+        }
+        .order-button{
+          width: 50px;
+          background-color: #fff;
+          color: #ffffff;
+          text-align: center;
+          height: 50px;
+          float: right;
+          
+          ion-icon{
+            font-size: 2.6em;
+            text-align: center;
+            color: color($colors,primary);
+          }
+          
+          ion-badge {
+            position: absolute;
+            bottom: 3rem;
+            right: .3rem;
+            opacity: 0.9;
+          }
+          .order-text{
+            font-size: 1.2rem;
+            padding-top: 1vh;
+          }
+      
+        }
+        .label-md {
+          height: 100%;
+           margin:0;
+      }
+      .label-ios {
+        height: 100%;
+         margin:0;
+      }
+      .price-wrapper{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        .price {
+          font-size: 1.68rem;
+          font-weight: 500;
+          color: color($colors, primary);
+          display: inline-block;
+        }
+        .old-price {
+          margin-left: 3vw;
+          margin-top: 3px;
+          font-size: 1.26rem;
+          font-weight: 400;
+          color: color($colors, lightdark);
+          text-decoration: line-through;
+          position: absolute;
+          display: inline-block;
+        }
+      
+      }
+      }
+      .item-vendor{
+        color: #d4902a;
+      }
+      .item-name-container{
+        margin: 1.3vh 0 0 0;
+        width: 61%;
+        white-space: normal;
+        display: inline-block;
+      }
+
+      .scroll-list{
+        height: 100%;
+      }
+      .order-button{
+        width: 50px;
+        background-color: #fff;
+        color: #ffffff;
+        text-align: center;
+        height: 50px;
+        float: right;
+        
+        ion-icon{
+          font-size: 2.6em;
+          text-align: center;
+          color: color($colors,primary);
+        }
+        
+        ion-badge {
+          position: absolute;
+          bottom: 3rem;
+          right: .3rem;
+          opacity: 0.9;
+        }
+        .order-text{
+          font-size: 1.2rem;
+          padding-top: 1vh;
+        }
+    
+      }
+}

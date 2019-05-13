@@ -1,0 +1,108 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@import "../../node_modules/ionic2-auto-complete/auto-complete";
+
+
+.menu-header{
+  color: color($colors,dark);
+  
+  font-size: 2.36rem;
+  text-align: center;
+  padding: 1rem;
+}
+.menu {
+  background-color: color($colors, primary);
+  .menu-list {
+    padding-top: 5vh;
+  }
+  .parent{
+    color: color($colors,secondary)!important;
+
+  }
+  .menu-list .item:active {
+    color: color($colors, secondary);
+    font-size: 1.36rem;
+    background: transparent;
+    border: none;
+    // border-bottom: 0.1rem solid color($colors, light);
+    ion-icon {
+      font-size: 2rem;
+      padding-top: 3px;
+    }
+  }
+  
+  .menu-thumbnail-img{
+    width: 9vw;
+    height: 5vh;
+  }
+  .menu-list .item {
+    color: color($colors, light);
+    font-size: 1.36rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+    // border-bottom: 0.1rem solid color($colors, light);
+    ion-icon {
+      font-size: 2rem;
+      padding-top: 3px;
+    }
+  }
+  .menu-list .child {
+    padding-left: 8vw !important;
+    font-size: 1.28rem;
+  }
+  .menu-list .item .item-inner {
+    background: transparent;
+    border: none;
+  }
+
+  .list {
+    margin-bottom: 0 !important;
+  }  
+
+  .accordion-list {
+    background: color($colors, light);
+    height: 100%;
+}
+.section {
+    background: #fff;
+    color: #000;
+    margin-bottom: 4px;
+}
+.section-active {
+    background: #ffc400;
+    color: #fff;
+}
+
+.child {
+    color: #000;
+    margin-bottom: 4px;
+}
+.child-item {
+    background: #f3f2f1;
+    padding: 10px;
+}
+.label {
+    margin: 0px;
+}
+.list {
+    margin-bottom: 4px;
+}
+
+ 
+}

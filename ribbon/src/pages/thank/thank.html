@@ -1,0 +1,43 @@
+<!--
+  Generated template for the Thank page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <!-- <img src="assets/img/small-logo.png"  class="menu-logo-img"> -->
+</ion-header>
+
+
+<ion-content class="page-thank no-scroll">
+  <div class="thank-wrapper">
+    <div class="thank">
+      Thank You
+    </div>
+    <div class="detail">
+      for your order
+    </div>
+  </div>
+  <div class="order">
+    Order number: <span>#{{orderId}}</span>
+  </div>
+  <div class="thank-image">
+    <img src="assets/img/thankyou.png">
+  </div>
+  <div class="estimate-wrapper">
+    <div class="estimate">
+      Estimated delivery
+    </div>
+    <div class="date">
+      Monday June 30, 2016
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="clear-gap thanks-footer" >
+  <div class="track-order-wrapper">
+  </div>
+  <div class="action-button">
+    <button ion-button full (click)="shopping()">Continue Shopping <ion-icon name="arrow-round-forward"></ion-icon></button>
+  </div>
+</ion-footer>

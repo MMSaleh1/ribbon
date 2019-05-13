@@ -1,0 +1,188 @@
+<!--
+  Generated template for the Profile page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+   <!-- <img src="assets/img/small-logo.png"  class="menu-logo-img"> 
+   <ion-searchbar (tap)="toSearchPage()"></ion-searchbar> -->
+  </ion-navbar>
+  <!-- <div>
+    <scroll-tabs #scrollTab  [tabs]="tabs" [selectEnable]="isTabsSelectable" (onSelectedTab)="tabChange($event)"></scroll-tabs>
+  </div> -->
+  <ion-segment mode="md" [(ngModel)]="tabNum" color="primary">
+    <ion-segment-button value="0" >
+      <div class="search-change">{{'profilePage.segments.profile' | translate}}</div>
+    </ion-segment-button>
+    <ion-segment-button value="1">
+      <div class="search-change">{{'profilePage.segments.myOrders' | translate}}</div>
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      <div class="search-change">{{'profilePage.segments.wishList' | translate}}</div>
+    </ion-segment-button>
+    <ion-segment-button value="3">
+      <div class="search-change">{{'profilePage.segments.address' | translate}}</div>
+    </ion-segment-button>
+  </ion-segment>
+  
+
+</ion-header>
+
+<ion-content class="page-profile">
+  <div [ngSwitch]="tabNum">
+    <!-- PROFILE -->
+    <div class="content-wrapper" *ngSwitchCase="0">
+      <div class="profile">
+        <div class="avatar-image">
+          <div class="avatar-container">
+            <div class="avatar-cropper">
+              
+              <img src="assets/img/signup_male.png">
+              <img *ngIf="user.gender  == 'Female'" src="assets/img/signup_female.png">
+            </div>
+          </div>
+        </div> 
+        
+        <ion-list class="info-list">
+          <ion-item>
+            <ion-icon class="info-icon" item-left name="person"></ion-icon>
+            <div class="info-detail">{{user.name}}</div>
+          </ion-item>
+          <ion-item>
+            <ion-icon class="info-icon" item-left name="mail"></ion-icon>
+            <div class="info-detail">{{user.email}}</div>
+          </ion-item>
+         
+        
+          <!--
+          <ion-item>
+            <ion-icon class="info-icon" item-left name="lock"></ion-icon>
+            <div class="info-detail">Change password</div>
+          </ion-item> -->
+
+        </ion-list> 
+  
+      </div>
+      <ion-fab right edge>
+        <button ion-fab>
+          <ion-icon name="arrow-dropleft"></ion-icon>
+        </button>
+        <ion-fab-list side="left">
+          <button ion-fab color="primary" (tap)="signOut()"><ion-icon mode="ios" name="log-out"></ion-icon></button>
+        </ion-fab-list>
+        <ion-fab-list side="bottom">
+          <button ion-fab color="primary" (tap)="changelang()">{{'language' | translate}}</button>
+        </ion-fab-list>
+      </ion-fab>
+    </div>
+    <!-- END PROFILE -->
+
+    <!-- MY ORDERS -->
+    <div class="content-wrapper" *ngSwitchCase="1">
+      <div class="order" >
+        <ion-list class="order-list"> 
+            <div *ngIf="orders.length == 0">  
+                <div class="no-items">
+                    <div class="title">
+                        No orders made
+                    </div>
+                </div>
+               
+              </div>
+              <div *ngIf="ordersReady">
+          <button ion-item *ngFor="let order of orders" (tap)="openOrder(order)">
+            <div class="date">{{order.createdOn | date: 'dd-MMM-yyyy'}}</div>
+            <div class="order-number">Order id #{{order.ID}}</div>
+            <ion-note [class.processing]="order.statusId !== '10'" [class.delivered]="order.statusId === '10'" item-right>
+              {{order.statusId}}
+            </ion-note>
+          </button>
+        </div>
+        </ion-list>
+      </div>
+    </div>
+    <!-- END MY ORDERS -->
+
+    <!-- WISHLIST --> 
+    <div class="content-wrapper" *ngSwitchCase="2">
+      <div class="wishlist">
+        <ion-list class="cart-list"> 
+            <div *ngIf="wishProducts.length == 0">  
+                <div class="no-items">
+                    <div class="title">
+                        No wishlist added
+                    </div>
+                </div>
+               
+              </div>
+          <ion-item-sliding *ngFor="let wish of wishProducts">
+            <ion-item class="cart-list-item">
+              <ion-thumbnail item-left class="item-thumbnail"  (tap)="toProduct(wish)"> 
+                  <img class="img" [src]="wish.image1">
+              </ion-thumbnail>
+              <div class="item-name-container"  (tap)="toProduct(wish)">
+                <div class="item-name">{{wish.name}}</div>
+                <div class="item-vendor">{{wish.company_name}}</div>
+                <rating rating="{{wish.rating}}" cCount="{{wish.customerCount}}"></rating>
+              </div>
+              <div class="price-wrapper" *ngIf="wish.price !=0" (tap)="toProduct(wish)">
+                <div class="price">{{wish.currentPrice}}</div> <div class="">LE</div>
+                <div class="old-price">{{wish.price}} </div> <div>LE</div>
+              </div>
+              <div class="price-wrapper" *ngIf="wish.price === 0" (tap)="toProduct(wish)">
+                <div class="price">{{wish.currentPrice}}</div>    
+                <div class="">LE</div> 
+                
+              </div>
+              <div  class="order-button" (tap)="add2Cart(wish)"><div class="order-text">Add To Cart</div></div> 
+             
+            </ion-item>
+            <ion-item-options class="actiion-button" side="right">
+              <button ion-button icon-only color="danger" (tap)="removeWish(wish)">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+    </div>
+    <!-- END WISHLIST -->
+
+    <!-- SAVED ADDRESS -->
+    <div class="content-wrapper" *ngSwitchCase="3">
+      <div class="address-container">
+        <ion-list class="address-list"> 
+          <div *ngIf="savedAddresses.length == 0">  
+            <div class="no-items">
+                <div class="title">
+                    No saved addresses
+                </div>
+            </div>
+           
+          </div>
+          <ion-item-sliding *ngFor="let addr of savedAddresses">
+            <ion-item class="address-list-item">
+              <h2>{{addr.houseNum}} {{addr.street}}</h2>
+              <div class="detail">{{addr.Block}},</div>
+              <div class="detail">{{addr.city}}, {{addr.district}}, {{addr.country}} {{addr.zipCode}}</div>
+              <!-- <div item-right class="right-bag">
+                <button ion-button clear (click)="editAddress(addr)">Edit</button>
+              </div> -->
+            </ion-item>
+            <ion-item-options class="actiion-button" side="right">
+              <button ion-button icon-only color="danger" (click)="removeAddress(addr)">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+    </div>
+    <!-- END SAVED ADDRESS -->
+
+
+  </div>
+</ion-content>

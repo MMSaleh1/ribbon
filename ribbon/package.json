@@ -1,0 +1,86 @@
+{
+  "name": "Ribbon",
+  "author": "mohammed.magdy.ali.96@gmail.com",
+  "homepage": "https://quanganh206.github.io/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "5.0.0",
+    "@angular/compiler": "5.0.0",
+    "@angular/compiler-cli": "5.0.0",
+    "@angular/core": "5.0.0",
+    "@angular/forms": "5.0.0",
+    "@angular/http": "5.0.0",
+    "@angular/platform-browser": "5.0.0",
+    "@angular/platform-browser-dynamic": "5.0.0",
+    "@ionic-native/core": "3.12.1",
+    "@ionic-native/in-app-browser": "^3.12.1",
+    "@ionic-native/keyboard": "^4.12.0",
+    "@ionic-native/native-storage": "^4.7.0",
+    "@ionic-native/splash-screen": "3.12.1",
+    "@ionic-native/status-bar": "3.12.1",
+    "@ionic/lab": "^1.0.0",
+    "@ionic/storage": "2.1.3",
+    "@ngx-translate/core": "^9.1.1",
+    "@ngx-translate/http-loader": "^2.0.1",
+    "cordova-android": "^7.1.1",
+    "cordova-browser": "^5.0.4",
+    "cordova-ios": "4.5.5",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-inappbrowser": "^1.7.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.2",
+    "cordova-plugin-ionic-webview": "^1.2.1",
+    "cordova-plugin-nativestorage": "^2.3.2",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "ionic-angular": "^3.9.2",
+    "ionic2-auto-complete": "^1.6.2-alpha",
+    "ionicons": "3.0.0",
+    "rxjs": "5.5.2",
+    "sw-toolbox": "3.6.0",
+    "ws": "^3.3.2",
+    "zone.js": "0.8.18"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.2.2",
+    "typescript": "2.4.2"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-device",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": [
+    "ios",
+    {
+      "platform": "ios",
+      "version": "1.0",
+      "locator": "ios"
+    }
+  ],
+  "description": "Ribbon: Market place for Gifts in egypt",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-nativestorage": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "browser",
+      "android",
+      "ios"
+    ]
+  }
+}

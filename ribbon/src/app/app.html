@@ -1,0 +1,35 @@
+<!-- <ion-menu  [content]="content" id="BOQ">
+
+  <ion-header>
+<div class="menu-header">{{ 'sideMenu.title' | translate }}</div>
+<button ion-button (tap)="changelang()">{{'language' | translate}}</button>
+  </ion-header>
+  <ion-content class="menu">
+    <ion-list class="menu-list">
+      <div *ngFor="let c of catArray; let i = index;">
+        <ion-row (tap)="goToSubCat(c)">
+          <ion-col col-auto *ngIf="hasImage(c)"><img class="menu-thumbnail-img" [src]="c.image"></ion-col> 
+          <ion-col col-auto *ngIf="!hasImage(c)"><img class="menu-thumbnail-img" src="assets/img/nophoto.jpg"></ion-col> 
+          <ion-col>
+              <button detail-none class="parent" ion-item >
+                  {{c.name}}
+                
+                </button>
+             
+          </ion-col>
+        </ion-row>
+          
+            
+          
+
+    
+      </div>
+
+    
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu> -->
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

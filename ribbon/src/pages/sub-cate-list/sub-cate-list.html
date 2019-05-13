@@ -1,0 +1,83 @@
+<!--
+  Generated template for the SubCateListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <div class=menu-img-container>
+          <img src="assets/img/logo-white.png"  class="menu-logo-img">
+        </div>
+      <ion-searchbar placeholder="What Are You Looking For?" mode="md" (ionInput)="getItems($event)"></ion-searchbar>
+    
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <button *ngIf=" hasProduct()" ion-button round class="button-left" (tap)="openModal()"><ion-icon name="ios-funnel"></ion-icon></button>
+  <button *ngIf="hasCart()" ion-button round  class="button-right" (tap)="placeOrder()"><ion-icon name="ios-cart"></ion-icon></button>
+<!-- 
+    <div>
+        <ion-slides dir="left"  loop="true" class="slides"[slidesPerView]="3">
+          <ion-slide class="slider-container" *ngFor="let item of results">
+             <div (tap)="openSubCate(item)" class="slider-div"><div class="slider-name">{{item.name}}</div></div>
+          </ion-slide>
+     </ion-slides>
+      </div> -->
+    
+        
+    <!-- <ion-segment mode="md" [(ngModel)]="listSelected" color="secondary">
+      <ion-segment-button value="0" >
+        <div class="search-change">{{'subCategories.Category' | translate}}</div>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <div class="search-change">{{'subCategories.Product' | translate}}</div>
+      </ion-segment-button>
+    </ion-segment>
+ 
+    <div [ngSwitch]="listSelected">
+  <ion-list *ngSwitchCase="'0'">
+    <ion-item *ngFor="let subCat of results">
+      <ion-label (tap)="openSubCate(subCat)">{{subCat.name}}</ion-label>
+    </ion-item>
+  </ion-list> -->
+
+
+
+
+
+  <!-- <ion-list *ngSwitchCase="'1'" > -->
+    <div class="scroll-container">
+      <ion-scroll scrollY="true" class="scroll-list">
+    <ion-list>
+    <ion-item class="cart-list-item" *ngFor="let product of results">
+      <ion-thumbnail item-left class="item-thumbnail"  (tap)="toProduct(product)"> 
+          <img class="img" [src]="product.image1">
+      </ion-thumbnail>
+      <div    (tap)="toProduct(product)" class="item-name">{{product.name}}</div>
+      <div class="item-name-container"  (tap)="toProduct(product)">
+        <div class="item-vendor">{{product.company_name}}</div>
+        <rating rating="{{product.rating}}" cCount="{{product.customerCount}}"></rating>
+        <div class="price-wrapper" *ngIf="product.price !=0" (tap)="toProduct(product)">
+          <div class="price">{{product.currentPrice}} LE</div> 
+          <div class="old-price">{{product.price}} LE </div> 
+        </div>
+        <div class="price-wrapper" *ngIf="product.price === 0" (tap)="toProduct(product)">
+          <div class="price">{{product.currentPrice}} LE</div>    
+          
+        </div>
+      </div>
+     
+      <button ion-button icon-only class="order-button" (tap)="add2Cart(product)"><ion-icon name="add"><ion-badge mod="ios" *ngIf="getProdQuant(product.id) > 0 " color="danger">{{ getProdQuant(product.id) }}</ion-badge></ion-icon></button> 
+     
+    </ion-item>
+  </ion-list>
+</ion-scroll>
+</div>
+
+</ion-content>

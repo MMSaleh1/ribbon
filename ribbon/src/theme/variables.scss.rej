@@ -1,0 +1,9 @@
+diff a/9ecomv3/src/theme/variables.scss b/9ecomv3/src/theme/variables.scss	(rejected hunks)
+@@ -32,7 +32,6 @@
+ // The "primary" color is the only required color in the map.
+ 
+ $colors: ( 
+-   primary: #e94d3a,
+    primary: #3e3e3e,
+    secondary: #e94d3a,
+    danger: #f15a67,
