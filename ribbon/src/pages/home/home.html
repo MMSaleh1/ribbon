@@ -7,7 +7,7 @@
 <ion-header>
   <ion-navbar (tap)="toSearchPage()">
     <div class=menu-img-container>
-      <img src="assets/img/logo-white.png"  class="menu-logo-img">
+      <img src="assets/img/ribbon.png"  class="menu-logo-img">
     </div>
     <div>
         <ion-searchbar placeholder="What Are You Looking For?" mode="md" id="input"></ion-searchbar> 
@@ -47,7 +47,7 @@
         <div class="vendor-name1">{{item[0].name}}</div>
       </div>
 
-      <div class="vendor-list-container"  (click)="vendor(item[1])" >
+      <div class="vendor-list-container" *ngIf="item[1] != undefined"  (click)="vendor(item[1])" >
           <div class="vendor-image-container"> <img  class="vendor-image" src="{{item[1].image}}"></div>
           <div class="vendor-name2">{{item[1].name}}</div>
         </div>
@@ -87,10 +87,10 @@
         </ion-item>
       </div>
 
-      <div class="category-list-container">
-          <ion-item class="cate-list-item"(click)="categories(item[1])">
+      <div class="category-list-container"  *ngIf="item[1] != undefined">
+          <ion-item class="cate-list-item" (click)="categories(item[1])">
               
-           <ion-label class="category-img-wrapper">
+           <ion-label class="category-img-wrapper" >
               <div class="title">{{item[1].name}}</div>
               <div class="pic-box">
               <img  [src] = "getImgContent(item[1].image)">

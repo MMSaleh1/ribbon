@@ -17,7 +17,7 @@ export class RootProvider {
   
   public static APIURL3 = "http://nemooo-001-site1.atempurl.com/api/";
 
-  public static APIURL4 = "http://edge2018-001-site2.gtempurl.com/api/";
+  public static APIURL4 = "http://edge2018-001-site14.gtempurl.com/api/";
 
   public static imageUrl = "http://nemo0o-001-site1.gtempurl.com/";
   

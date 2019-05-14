@@ -32,7 +32,7 @@ ion-card img {
 // The "primary" color is the only required color in the map.
 
 $colors: ( 
-   primary: #e94d3a,
+   primary: #c8e1e5,
    secondary: #e94d3a,
    danger: #f15a67,
    light: #f4f4f4,
@@ -192,6 +192,13 @@ $tabs-background: color($colors, primary);
    color: #fff;
  }
 
+ .back-button-ios{
+  color: color($colors,dark)!important;
+ }
+ .back-button-md{
+  color: color($colors,dark)!important;
+ }
+
 
  ion-navbar{
   background-color: color($colors,primary) !important;
@@ -221,11 +228,15 @@ $tabs-background: color($colors, primary);
    height: 2.6vh;
  }
  .menu-img-container{
-   margin: auto;
-   width: 25%;
+
+  margin: auto;
+    width: 16%;
+ 
+
   .menu-logo-img{
     height: 5vh;
-    margin: auto;
+  width: 21vw;
+  margin: auto;
     // display: block;
   }
  }

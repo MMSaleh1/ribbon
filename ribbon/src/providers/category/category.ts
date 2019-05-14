@@ -178,12 +178,11 @@ export class CategoryProvider {
   }
 
   public async getCategoriesNop(): Promise<any> {
-    console.log("test2");
     let subcat = await this.getSubCategoriesNop();
     console.log(subcat);
     return new Promise((resolve) => {
       this.http.get(`${RootProvider.APIURL4}${this.categoriesApiController}${this.categoriesActionString}`).map(res => <any>res.json()).subscribe(data => {
-        if (data == null || data.length == 0 || subcat.length == 0) {
+        if (data == null || data.length == 0) {
           resolve([])
         }
         else {

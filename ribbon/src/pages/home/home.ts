@@ -147,6 +147,7 @@ export class HomePage {
   setCategories(){
     this.categorySlider = new Array();
     let counter = 0;
+    console.log(this.category_array)
     for(let i = 0;i<this.category_array.length;i=i+2){
       this.categorySlider[counter] = new Array();
       this.categorySlider[counter][0]=this.category_array[i];
