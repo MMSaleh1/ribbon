@@ -6,13 +6,15 @@
 -->
 <ion-header>
   <ion-navbar>
-    
-    <!-- <img src="assets/img/ribbon.png"  class="menu-logo-img">
-    <ion-searchbar (tap)="toSearchPage()"></ion-searchbar> -->
-     <button ion-button (tap)="deleteState()"  class="trash">
+
+    <button ion-button (tap)="deleteState()"  class="trash">
       <ion-icon name="ios-trash"></ion-icon>
     </button>
      
+    <div class=menu-img-container1>
+      <div class="header-title1">Ribbon</div>
+    </div>
+    
   </ion-navbar> 
 </ion-header>
 
@@ -35,6 +37,7 @@
       <div class="place-order">
         <button ion-button clear >{{'myCartPage.placeOrderButton' | translate}}</button>
       </div>
+
       <div class="order-price">
         {{cart.total()}} LE
       </div>
