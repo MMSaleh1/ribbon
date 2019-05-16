@@ -6,14 +6,15 @@
 -->
 <ion-header>
   <ion-navbar>
-    
-    <div class=menu-img-container>
-      <div class="header-title">Ribbon</div>
-    </div>
-     <button ion-button (tap)="deleteState()"  class="trash">
+
+    <button ion-button (tap)="deleteState()"  class="trash">
       <ion-icon name="ios-trash"></ion-icon>
     </button>
      
+    <div class=menu-img-container1>
+      <div class="header-title1">Ribbon</div>
+    </div>
+    
   </ion-navbar> 
 </ion-header>
 
@@ -36,6 +37,7 @@
       <div class="place-order">
         <button ion-button clear >{{'myCartPage.placeOrderButton' | translate}}</button>
       </div>
+
       <div class="order-price">
         {{cart.total()}} LE
       </div>

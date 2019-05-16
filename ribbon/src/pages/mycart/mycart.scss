@@ -3,7 +3,21 @@ page-mycart {
     width: 6vw;
     height: 5vh;
     font-size: 2.2em;
+    display: inline-block;
   }
+
+  .menu-img-container1{
+    margin: auto;
+    width: 73%;
+    display: inline-block;
+    .header-title1{
+      color: #249581;
+      font-size: 2rem;
+      font-weight: 700;
+      width: 25vw;
+      margin: auto;
+  }
+}
   .cart-scroll{
     height: 70vh;
     margin-top: 2vh;
@@ -18,7 +32,7 @@ page-mycart {
     .title {
       font-size: 1.68rem;
       font-weight: 500;
-      color: color($colors, secondary);
+      color: color($colors, dark);
     }
     .no-items-image {
       padding-top: 3vh;
